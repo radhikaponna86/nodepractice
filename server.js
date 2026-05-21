@@ -12,6 +12,7 @@ const { initializeDB } = require('./controllers/collectionController');
 app.use(cors());
 app.use(express.json());
 
+
 const client = new MongoClient(process.env.MONGO_URI);
 let db, collection;
 
@@ -29,8 +30,6 @@ connectDB();
 
 // Use routes
 app.use('/api/documents', collectionRoutes);
-
-
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
